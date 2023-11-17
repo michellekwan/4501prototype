@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virginia's Judicial System Home</title>
+    <style>
+        /* Basic styling for the logo bar and sidebar */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #logo-bar {
+            background-color: #415a8d;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            height: 100px; 
+        }
+        #sidebar {
+            width: 240px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+        }
+        #content {
+            margin-left: 240px;
+            padding: 20px;
+            margin-top: -25px;
+        }
+        /* Style for the navigation menu items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .submenu {
+            text-decoration:underline;
+        }
+        .submenuItem {
+            padding: 8px;
+        }
+
+        .menuItem {
+            padding: 6%;
+            text-align: left;
+            position: relative; /* Added for positioning the dropdown */
+            transition: all 0.2s;
+        }
+        .menuItemHome {
+            padding: 6%;
+            text-align: left;
+            position: relative; /* Added for positioning the dropdown */
+            transition: all 0.2s;
+        }
+        .menuItem:hover {
+            background-color: #444;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Style for the dropdown menus */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 10px;
+            max-width:fit-content;
+            width: 100%;
+            z-index: 1;
+        }
+        li:hover .dropdown {
+            display: block;
+        }
+        /* Shift down effect */
+        .menuItem:hover ~ .menuItem {
+            transform: translateY(300px);
+        }
+        /* Style for the input field */
+        #text-input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #eee;
+        }
+        .tab-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo-bar">
+        <h1>Virginia's Judicial System</h1>
+    </div>
+    
+    <div id="sidebar">
+        <!-- icons for sidebar menu -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <input type="text" id="text-input" placeholder="Search" style=" width: 196px;">
+        <script>
+            document.getElementById("text-input").addEventListener("keyup", function(event) {
+                if (event.key === "Enter") {
+                    performSearch();
+                }
+            });
+
+            function performSearch() {
+                var userInput = document.getElementById("text-input").value.toLowerCase();
+
+                if (userInput.includes("magistrate") || userInput.includes("complaint")) {
+                    window.location.href = "magistrateservices.html";
+                } else if (userInput.includes("fee") || userInput.includes("calculate")) {
+                    window.location.href = "calculatefees.html";
+                } else {
+                    alert("No search results found.");
+                }
+            }
+        </script>
+        
+        <ul>
+            <li class="menuItemHome"><i class="fa fa-fw fa-home"></i><a href="index.html">     Home</a>
+            </li>
+            <li class="menuItem"><i class="fa fa-fw fa-gavel"></i><a href="#">     Court Services</a>
+                <div class="dropdown">
+                    <ul class="submenu">
+                        <li class="submenuItem"><a href="pg.html">Supreme Court of Virginia</a></li>
+                        <li class="submenuItem"><a href="pg.html">Court of Appeals of Virginia</a></li>
+                        <li class="submenuItem"><a href="pg.html">Circuit Courts</a></li>
+                        <li class="submenuItem"><a href="pg.html">General District Courts</a></li>
+                        <li class="submenuItem"><a href="pg.html">Juvenile and Domestic Relations District Courts</a></li>
+                        <li class="submenuItem"><a href="magistrateservices.html">Magistrate Court</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menuItem"><i class="fa fa-fw fa-credit-card"></i><a href="#">     Payment & File Services</a>
+                <div class="dropdown">
+                    <ul class="submenu">
+                        <li class="submenuItem"></i><a href="calculatefees.html">Calculate Courts Fees</a></li>
+                        <li class="submenuItem"><a href="pg.html">Pay Traffic Fees and Offenses</a></li>
+                        <li class="submenuItem"><a href="pg.html">Assistance with Protective Order (I-CAN!)</a></li>
+                        <li class="submenuItem"><a href="pg.html">Electronic Voucher Payment System</a></li>
+                        <li class="submenuItem"><a href="pg.html">Virginia Appellate Courts Electronic Filing System</a></li>
+                        <li class="submenuItem"><a href="pg.html">Virginia Judiciary E-Filing System</a></li>
+                        <li class="submenuItem"><a href="pg.html">Virginia Date of Birth Confirmation</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menuItem"><i class="fa fa-fw fa-book"></i><a href="#">     Directories</a>
+                <div class="dropdown">
+                    <ul class="submenu">
+                        <li class="submenuItem"><a href="#">Not Implemented</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menuItem"><i class="fa fa-fw fa-calendar"></i><a href="#">     Programs</a>
+                <div class="dropdown">
+                    <ul class="submenu">
+                        <li class="submenuItem"><a href="#">Not Implemented</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menuItem"><i class="fa fa-fw fa-question"></i><a href="#">     Help and FAQ</a>
+                <div class="dropdown">
+                    <ul class="submenu">
+                        <li class="submenuItem"><a href="pg.html">Glossary of Terms</a></li>
+                        <li class="submenuItem"><a href="pg.html">FAQs</a></li>
+                        <li class="submenuItem"><a href="pg.html">Site Feedback Form</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #feedback-form {
+            max-width: 400px;
+            margin: 20px auto;
+            margin-left: 7px;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #feedback-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #feedback-form input[type="text"],
+        #feedback-form input[type="email"],
+        #feedback-form select,
+        #feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #feedback-form button {
+            background-color: green;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #feedback-message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p style="margin-left: -5px; margin-top: 3.5%;"><a href="index.html" style="color: black;">Home</a> > Help and FAQ > <a href="feedback.html" style="color: black;">Site Feedback Form</a></p>
+
+    <div id="feedback-form">
+        <h2>Site Feedback</h2>
+        <form id="userFeedbackForm">
+            <label for="fullName">Enter your full name:</label>
+            <input style="margin-bottom:5%;" type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Your email address:</label>
+            <input style="margin-bottom:5%;" type="email" id="email" name="email" required>
+
+            <label for="experience">How would you rate your experience with the site?</label>
+            <select style="margin-bottom:5%;" id="experience" name="experience" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="notSatisfied">Not Satisfied</option>
+                <option value="somewhatNotSatisfied">Somewhat Not Satisfied</option>
+                <option value="ok">OK</option>
+                <option value="satisfied">Satisfied</option>
+                <option value="verySatisfied">Very Satisfied</option>
+            </select >
+
+            <label for="suggestions">Do you have any suggestions to improve our website?</label>
+            <textarea style="margin-bottom:5%;" id="suggestions" name="suggestions" rows="4" cols="50"></textarea>
+
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+
+            <div id="feedback-message"></div>
+        </form>
+    </div>
+
+    <script>
+        function submitFeedback() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var experience = document.getElementById("experience").value;
+            var suggestions = document.getElementById("suggestions").value;
+
+            var feedbackMessage = document.getElementById("feedback-message");
+
+            feedbackMessage.innerHTML = "Your feedback has been submitted. Thank you!<br><br>"
+        }
+    </script>
+
+</body>
+</html>
+
+   
+</html>
+
+
+    </div>
+</body>
+</html>
